@@ -28,6 +28,7 @@ rm -rf package/lean/luci-theme-netgear
 rm -rf package/kenzo/luci-app-argon-config
 rm -rf package/kenzo/luci-theme-argon_new
 rm -rf package/kenzo/luci-app-advanced
+rm -rf package/kenzo/luci-app-serverchan
 
 #下载主题luci-theme-argon
 git clone https://github.com/XXKDB/luci-theme-argon_armygreen.git package/lean/luci-theme-argon_armygreen
@@ -46,6 +47,8 @@ git clone https://github.com/sirpdboy/luci-app-autotimeset.git package/lean/luci
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
 #luci-app-advanced 高级设置，包括smartdns，openclash，防火墙，DHCP等。
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/lean/luci-app-advanced
+#luci-app-NetSpeedTest — 网络速度测试1.5完整版
+git clone https://github.com/sirpdboy/netspeedtest.git package/lean/netspeedtest
 
 
 # 修改luci-theme-argon_armygreen主题渐变色，16进制RGB
