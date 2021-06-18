@@ -9,11 +9,6 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
-
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-#rm -rf package/lean/luci-theme-argon
-#git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git package/lean/luci-theme-infinityfreedom
 # 修改openwrt登陆地址,把下面的192.168.31.1修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
@@ -23,7 +18,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='XXKDB'' package
 # 版本号里显示一个自己的名字（ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
 #sed -i "s/OpenWrt /ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/OpenWrt /星新课代表/g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/Xiaomi Mi Router CR6606/星新课代表制作出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
+#sed -i "s/Xiaomi Mi Router CR6606/星新课代表制作出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
 
 #删除原默认主题
 rm -rf package/lean/luci-theme-argon
@@ -117,6 +112,7 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 #sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:你的密码/g' package/lean/default-settings/files/zzz-default-settings
 # 修改插件名字（修改名字后不知道会不会对插件功能有影响，自己多测试）
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
+sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 
 # 修改默认wifi名称ssid为Xiaomi_R4A
 sed -i 's/ssid=OpenWrt/ssid=XXKDB/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
