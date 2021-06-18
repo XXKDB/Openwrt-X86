@@ -81,6 +81,11 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+
+    - name: 上传 banner
+      run: |
+        mv banner openwrt/package/base-files/files/etc/banner        
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
